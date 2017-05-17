@@ -1,0 +1,19 @@
+{
+  "Listen": [
+    {
+      "Address": ":8080",
+      "Auth": [
+        {
+          "Username": "test",
+          "Password": "test",
+          "AllowAddValues": true,
+          "AllowAddNewMeasures": true,
+          "AllowReadValues": true
+        }
+      ]
+    }
+  ],
+  "TickSize": 1000,
+  "SavePeriod": 3000,
+  "Storage": "directoryTree:rootDirectory=/tmp/storage;levels=3600,60"
+}
