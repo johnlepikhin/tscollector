@@ -27,6 +27,21 @@ func (v *TransactionValueIntT) Cleanup() {
 	v.Value = 0
 }
 
+func (v TransactionValueIntT) Printable() string {
+	return strconv.FormatUint(v.Value, 10)
+}
+
+func (v TransactionValueIntT) GetUInt64() uint64 {
+	return v.GetValue()
+}
+
+func (v *TransactionValueIntT) SetUInt64(value uint64) {
+	v.Value = value
+}
+
+
+
+
 type TransactionValueIntAvgT struct {
 	TransactionValueIntT
 	InsertionsCount uint64
@@ -54,18 +69,6 @@ func (v TransactionValueIntAvgT) GetValue() uint64 {
 func (v *TransactionValueIntAvgT) Cleanup() {
 	v.Value = 0
 	v.InsertionsCount = 0
-}
-
-func (v TransactionValueIntT) Printable() string {
-	return strconv.FormatUint(v.Value, 10)
-}
-
-func (v TransactionValueIntT) GetUInt64() uint64 {
-	return v.GetValue()
-}
-
-func (v *TransactionValueIntT) SetUInt64(value uint64) {
-	v.Value = value
 }
 
 func (v TransactionValueIntAvgT) GetUInt64() uint64 {

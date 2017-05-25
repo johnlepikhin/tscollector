@@ -5,15 +5,18 @@ type DataType int
 type MeasureKey string
 
 const (
-	UInt64 DataType = iota
+	Int64 DataType = iota
+	Float64 = iota
 )
 
 func ValueTypeToDataType(valueType ValueType) DataType {
 	switch valueType {
 	case IntAvg:
-		return UInt64
+		return Int64
 	case IntLast:
-		return UInt64
+		return Int64
+	case FloatLast:
+		return Float64
 	}
 
 	return -1

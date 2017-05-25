@@ -10,6 +10,7 @@ import (
 	"sort"
 	"time"
 	"os"
+	"math"
 )
 
 const Version = 1
@@ -97,16 +98,42 @@ func (Storage StorageDirTreeT) EncodeUInt64(v uint64) EncodedValue {
 	return b[:length+1]
 }
 
+func (Storage StorageDirTreeT) EncodeInt64(v int64) EncodedValue {
+
+	if (v < 0) {
+		return Storage.EncodeUInt64(uint64(((-v) << 1) | 1))
+	}
+
+	return Storage.EncodeUInt64(uint64(v) << 1)
+}
+
+func (Storage StorageDirTreeT) EncodeFloat64(v float64) EncodedValue {
+	e := math.Floor(math.Log10(math.Abs(v)))
+	m := int64(v/math.Pow(10, e))
+
+	encodedExponent := Storage.EncodeInt64(int64(e))
+	encodedMantissa := Storage.EncodeInt64(m)
+
+	return append(encodedExponent, encodedMantissa...)
+}
+
+
 func (storage StorageDirTreeT) Encode(v transaction.TransactionValue) EncodedValue {
 	dataType := config.ValueTypeToDataType(v.GetConfigValue().Type)
 
 	switch dataType {
-	case config.UInt64:
-		var intval = v.GetUInt64()
+	case config.Int64:
+		var intval = v.GetInt64()
 		if intval == 0 {
 			return nil
 		}
-		return storage.EncodeUInt64(intval)
+		return storage.EncodeInt64(intval)
+	case config.Float64:
+		var floatVal = v.GetFloat64()
+		if floatVal == 0 {
+			return nil
+		}
+		return storage.EncodeFloat64(floatVal)
 	}
 
 	return nil
@@ -198,7 +225,7 @@ func (storage StorageDirTreeT) PrepareDirectories(levels []time.Time) string {
 func (storage StorageDirTreeT) SaveGroup(groupId int, group Group) {
 	var mask uint64
 	var ids = make([]int, 0)
-	for valueId, _ := range group {
+	for valueId := range group {
 		mask |= 1 << uint(valueId)
 		ids = append(ids, valueId)
 	}

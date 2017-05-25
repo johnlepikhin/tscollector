@@ -26,6 +26,7 @@ type ValueType string
 const (
 	IntLast ValueType = "IntLast"
 	IntAvg = "IntAvg"
+	FloatLast = "FloatLast"
 )
 
 type MeasureT struct {
@@ -116,6 +117,7 @@ func ValueTypeParser(input string) (ValueType, error) {
 	switch input {
 	case "IntLast": return IntLast, nil
 	case "IntAvg": return IntAvg, nil
+	case "FloatLast": return FloatLast, nil
 	}
 
 	return IntLast, errors.New(fmt.Sprintf("Invalid type '%s'", input))
@@ -137,7 +139,7 @@ func AddNewMeasure(key MeasureKey, valueType string) error {
 
 	values := append(Values, measure)
 
-	jsonValues, err := json.Marshal(values)
+	jsonValues, err := json.MarshalIndent(values, "", "  ")
 	if err != nil {
 		return err
 	}

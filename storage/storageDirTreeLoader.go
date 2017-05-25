@@ -37,6 +37,36 @@ func (storage StorageDirTreeT) ReadUInt64(stream *bufio.Reader) (uint64, error) 
 	return ret, nil
 }
 
+func (storage StorageDirTreeT) ReadInt64(stream *bufio.Reader) (int64, error) {
+	v, err := storage.ReadUInt64(stream)
+	if err != nil {
+		return 0, err
+	}
+
+	if v & 1 == 1 {
+		return -int64(v >> 1), nil
+	}
+
+	return int64(v) >> 1, nil
+}
+
+
+func (storage StorageDirTreeT) ReadFloat64(stream *bufio.Reader) (float64, error) {
+	exponent, err := storage.ReadInt64(stream)
+	if err != nil {
+		return 0, err
+	}
+
+	mantissa, err := storage.ReadInt64(stream)
+	if err != nil {
+		return 0, err
+	}
+
+	r := float64(mantissa) * math.Pow(10, float64(exponent))
+
+	return r, nil
+}
+
 type bit int
 
 type configValuesPosition int
@@ -91,12 +121,11 @@ func (storage StorageDirTreeT) LoadGroup(stream *bufio.Reader, fileTimeOffset ti
 		var transactionValue transaction.TransactionValue
 
 		switch config.ValueTypeToDataType(configValue.Type) {
-		case config.UInt64:
-			value, err := storage.ReadUInt64(stream)
+		case config.Int64:
+			value, err := storage.ReadInt64(stream)
 			if err != nil {
 				return record, err
 			}
-
 
 			switch configValue.Type {
 			case config.IntAvg:
@@ -104,7 +133,19 @@ func (storage StorageDirTreeT) LoadGroup(stream *bufio.Reader, fileTimeOffset ti
 			case config.IntLast:
 				transactionValue = new(transaction.TransactionValueIntT)
 			}
-			transactionValue.SetUInt64(value)
+			transactionValue.SetInt64(value)
+
+		case config.Float64:
+			value, err := storage.ReadFloat64(stream)
+			if err != nil {
+				return record, err
+			}
+
+			switch configValue.Type {
+			case config.FloatLast:
+				transactionValue = new(transaction.TransactionValueFloatT)
+			}
+			transactionValue.SetFloat64(value)
 		}
 		transactionValue.SetConfigValue(configValue)
 		record.PutValue(configValue.Key, transactionValue)

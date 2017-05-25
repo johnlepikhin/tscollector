@@ -6,35 +6,12 @@ import (
 	"errors"
 )
 
-type TransactionValue interface {
-	SetValue(value string) error
-	GetConfigValue() config.MeasureT
-	SetConfigValue(config.MeasureT)
-	GetUInt64() uint64
-	SetUInt64(value uint64)
-	Printable() string
-	Cleanup()
-}
-
-type TransactionValueT struct {
-	ConfigValue config.MeasureT
-	Value interface{}
-}
-
 type InputValue struct {
 	Value string
 	Type string
 }
 
 type InputValues map[config.MeasureKey]InputValue
-
-func (v TransactionValueT) GetConfigValue() config.MeasureT {
-	return v.ConfigValue
-}
-
-func (v *TransactionValueT) SetConfigValue(configValue config.MeasureT) {
-	v.ConfigValue = configValue
-}
 
 type Transaction interface {
 	GetValues() map[config.MeasureKey]TransactionValue
@@ -64,6 +41,8 @@ func (transaction TransactionT) addValue(configValue config.MeasureT, key config
 			transactionValue = new(TransactionValueIntT)
 		case config.IntAvg:
 			transactionValue = new(TransactionValueIntAvgT)
+		case config.FloatLast:
+			transactionValue = new(TransactionValueFloatT)
 		}
 		err := transactionValue.SetValue(value.Value)
 		if err != nil {
