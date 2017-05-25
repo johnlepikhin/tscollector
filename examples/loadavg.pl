@@ -12,8 +12,6 @@ close $fh;
 
 my ($la1, $la5, $la15) = $_ =~ /^([0-9.]+) ([0-9.]+) ([0-9.]+)/;
 
-print "$la1, $la5, $la15\n";
-
 my $t = TSCollector::newTransaction();
 TSCollector::addValue($t, "loadavg1", $la1, 'FloatLast');
 TSCollector::addValue($t, "loadavg5", $la5, 'FloatLast');
