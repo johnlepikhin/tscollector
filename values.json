@@ -18,5 +18,225 @@
     "ID": 3,
     "Type": "FloatLast",
     "Key": "floatval"
+  },
+  {
+    "ID": 4,
+    "Type": "IntLast",
+    "Key": "asd"
+  },
+  {
+    "ID": 5,
+    "Type": "IntLast",
+    "Key": "Slab"
+  },
+  {
+    "ID": 6,
+    "Type": "IntLast",
+    "Key": "Bounce"
+  },
+  {
+    "ID": 7,
+    "Type": "IntLast",
+    "Key": "SReclaimable"
+  },
+  {
+    "ID": 8,
+    "Type": "IntLast",
+    "Key": "MemFree"
+  },
+  {
+    "ID": 9,
+    "Type": "IntLast",
+    "Key": "DirectMap2M"
+  },
+  {
+    "ID": 10,
+    "Type": "IntLast",
+    "Key": "VmallocChunk"
+  },
+  {
+    "ID": 11,
+    "Type": "IntLast",
+    "Key": "VmallocTotal"
+  },
+  {
+    "ID": 12,
+    "Type": "IntLast",
+    "Key": "SwapTotal"
+  },
+  {
+    "ID": 13,
+    "Type": "IntLast",
+    "Key": "AnonPages"
+  },
+  {
+    "ID": 14,
+    "Type": "IntLast",
+    "Key": "SwapFree"
+  },
+  {
+    "ID": 15,
+    "Type": "IntLast",
+    "Key": "PageTables"
+  },
+  {
+    "ID": 16,
+    "Type": "IntLast",
+    "Key": "NFS_Unstable"
+  },
+  {
+    "ID": 17,
+    "Type": "IntLast",
+    "Key": "HugePages_Total"
+  },
+  {
+    "ID": 18,
+    "Type": "IntLast",
+    "Key": "HugePages_Free"
+  },
+  {
+    "ID": 19,
+    "Type": "IntLast",
+    "Key": "MemAvailable"
+  },
+  {
+    "ID": 20,
+    "Type": "IntLast",
+    "Key": "Unevictable"
+  },
+  {
+    "ID": 21,
+    "Type": "IntLast",
+    "Key": "Active(anon)"
+  },
+  {
+    "ID": 22,
+    "Type": "IntLast",
+    "Key": "Committed_AS"
+  },
+  {
+    "ID": 23,
+    "Type": "IntLast",
+    "Key": "Writeback"
+  },
+  {
+    "ID": 24,
+    "Type": "IntLast",
+    "Key": "Dirty"
+  },
+  {
+    "ID": 25,
+    "Type": "IntLast",
+    "Key": "Active(file)"
+  },
+  {
+    "ID": 26,
+    "Type": "IntLast",
+    "Key": "Mapped"
+  },
+  {
+    "ID": 27,
+    "Type": "IntLast",
+    "Key": "WritebackTmp"
+  },
+  {
+    "ID": 28,
+    "Type": "IntLast",
+    "Key": "KernelStack"
+  },
+  {
+    "ID": 29,
+    "Type": "IntLast",
+    "Key": "Active"
+  },
+  {
+    "ID": 30,
+    "Type": "IntLast",
+    "Key": "Hugepagesize"
+  },
+  {
+    "ID": 31,
+    "Type": "IntLast",
+    "Key": "SwapCached"
+  },
+  {
+    "ID": 32,
+    "Type": "IntLast",
+    "Key": "Inactive(file)"
+  },
+  {
+    "ID": 33,
+    "Type": "IntLast",
+    "Key": "DirectMap4k"
+  },
+  {
+    "ID": 34,
+    "Type": "IntLast",
+    "Key": "AnonHugePages"
+  },
+  {
+    "ID": 35,
+    "Type": "IntLast",
+    "Key": "HugePages_Rsvd"
+  },
+  {
+    "ID": 36,
+    "Type": "IntLast",
+    "Key": "MemTotal"
+  },
+  {
+    "ID": 37,
+    "Type": "IntLast",
+    "Key": "Cached"
+  },
+  {
+    "ID": 38,
+    "Type": "IntLast",
+    "Key": "VmallocUsed"
+  },
+  {
+    "ID": 39,
+    "Type": "IntLast",
+    "Key": "Buffers"
+  },
+  {
+    "ID": 40,
+    "Type": "IntLast",
+    "Key": "Inactive(anon)"
+  },
+  {
+    "ID": 41,
+    "Type": "IntLast",
+    "Key": "HardwareCorrupted"
+  },
+  {
+    "ID": 42,
+    "Type": "IntLast",
+    "Key": "Shmem"
+  },
+  {
+    "ID": 43,
+    "Type": "IntLast",
+    "Key": "HugePages_Surp"
+  },
+  {
+    "ID": 44,
+    "Type": "IntLast",
+    "Key": "Mlocked"
+  },
+  {
+    "ID": 45,
+    "Type": "IntLast",
+    "Key": "Inactive"
+  },
+  {
+    "ID": 46,
+    "Type": "IntLast",
+    "Key": "CommitLimit"
+  },
+  {
+    "ID": 47,
+    "Type": "IntLast",
+    "Key": "SUnreclaim"
   }
 ]
