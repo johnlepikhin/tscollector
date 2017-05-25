@@ -52,18 +52,12 @@ func (storage StorageDirTreeT) ReadInt64(stream *bufio.Reader) (int64, error) {
 
 
 func (storage StorageDirTreeT) ReadFloat64(stream *bufio.Reader) (float64, error) {
-	exponent, err := storage.ReadInt64(stream)
+	bits, err := storage.ReadUInt64(stream)
 	if err != nil {
 		return 0, err
 	}
 
-	mantissa, err := storage.ReadInt64(stream)
-	if err != nil {
-		return 0, err
-	}
-
-	r := float64(mantissa) * math.Pow(10, float64(exponent))
-
+	r := math.Float64frombits(bits)
 	return r, nil
 }
 

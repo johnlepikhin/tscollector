@@ -108,13 +108,7 @@ func (Storage StorageDirTreeT) EncodeInt64(v int64) EncodedValue {
 }
 
 func (Storage StorageDirTreeT) EncodeFloat64(v float64) EncodedValue {
-	e := math.Floor(math.Log10(math.Abs(v)))
-	m := int64(v/math.Pow(10, e))
-
-	encodedExponent := Storage.EncodeInt64(int64(e))
-	encodedMantissa := Storage.EncodeInt64(m)
-
-	return append(encodedExponent, encodedMantissa...)
+	return Storage.EncodeUInt64(math.Float64bits(v))
 }
 
 
