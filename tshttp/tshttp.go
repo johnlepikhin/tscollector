@@ -39,6 +39,39 @@ func HttpAddHandler (auth config.Auth, sharedTransaction transaction.Transaction
 	err = sharedTransaction.AddPlainValues(auth, values)
 	if err != nil {
 		httpjson.HttpJsonError(w, 1, err.Error())
+		return
+	}
+	httpjson.HttpJsonOK(w)
+}
+
+func HttpAddOneHandler (auth config.Auth, sharedTransaction transaction.Transaction, w http.ResponseWriter, r *http.Request) {
+	if !auth.AllowAddValues {
+		httpjson.HttpJsonError(w, 1, "No write access")
+		return
+	}
+
+	queryKey, ok := r.URL.Query()["key"]
+	if !ok {
+		httpjson.HttpJsonError(w, 1, "'key' is required")
+		return
+	}
+
+	queryValue, ok := r.URL.Query()["value"]
+	if !ok {
+		httpjson.HttpJsonError(w, 1, "'value' is required")
+		return
+	}
+
+	var qType = "unknown"
+	queryType, ok := r.URL.Query()["type"]
+	if ok {
+		qType = queryType[0]
+	}
+
+	err := sharedTransaction.AddPlainValue(auth, config.MeasureKey(queryKey[0]), transaction.InputValue{queryValue[0], qType})
+	if err != nil {
+		httpjson.HttpJsonError(w, 1, err.Error())
+		return
 	}
 	httpjson.HttpJsonOK(w)
 }

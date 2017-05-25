@@ -50,6 +50,10 @@ func startListen(transaction transaction.Transaction) {
 		tshttp.HttpAddHandler(auth, transaction, w, r)
 	}
 
+	httpAddOneHandlerReal := func(auth config.Auth, w http.ResponseWriter, r *http.Request) {
+		tshttp.HttpAddOneHandler(auth, transaction, w, r)
+	}
+
 	httpGetHandlerReal := func(auth config.Auth, w http.ResponseWriter, r *http.Request) {
 		tshttp.HttpGetHandler(auth, w, r)
 	}
@@ -61,6 +65,7 @@ func startListen(transaction transaction.Transaction) {
 			defer wg.Done()
 			server := http.NewServeMux()
 			server.HandleFunc("/add", tshttp.MakeAuthorizedHttpHandler(listen.Auth, httpAddHandlerReal))
+			server.HandleFunc("/addone", tshttp.MakeAuthorizedHttpHandler(listen.Auth, httpAddOneHandlerReal))
 			server.HandleFunc("/get", tshttp.MakeAuthorizedHttpHandler(listen.Auth, httpGetHandlerReal))
 			http.ListenAndServe(listen.Address, server)
 		}(l)
