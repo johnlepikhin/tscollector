@@ -6,15 +6,15 @@ import (
 
 type TransactionValueIntT struct {
 	TransactionValueT
-	Value uint64
+	Value int64
 }
 
-func (v TransactionValueIntT) GetValue() uint64 {
+func (v TransactionValueIntT) GetValue() int64 {
 	return v.Value
 }
 
 func (v *TransactionValueIntT) SetValue(newval string) error {
-	if parsedval, err := strconv.ParseUint(newval, 10, 64); err == nil {
+	if parsedval, err := strconv.ParseInt(newval, 10, 64); err == nil {
 		v.Value = parsedval
 	} else {
 		return err
@@ -28,14 +28,14 @@ func (v *TransactionValueIntT) Cleanup() {
 }
 
 func (v TransactionValueIntT) Printable() string {
-	return strconv.FormatUint(v.Value, 10)
+	return strconv.FormatInt(v.Value, 10)
 }
 
-func (v TransactionValueIntT) GetUInt64() uint64 {
+func (v TransactionValueIntT) GetInt64() int64 {
 	return v.GetValue()
 }
 
-func (v *TransactionValueIntT) SetUInt64(value uint64) {
+func (v *TransactionValueIntT) SetInt64(value int64) {
 	v.Value = value
 }
 
@@ -44,11 +44,11 @@ func (v *TransactionValueIntT) SetUInt64(value uint64) {
 
 type TransactionValueIntAvgT struct {
 	TransactionValueIntT
-	InsertionsCount uint64
+	InsertionsCount int64
 }
 
 func (v *TransactionValueIntAvgT) SetValue(newval string) error {
-	if parsedval, err := strconv.ParseUint(newval, 10, 64); err == nil {
+	if parsedval, err := strconv.ParseInt(newval, 10, 64); err == nil {
 		v.Value += parsedval
 		v.InsertionsCount++
 	} else {
@@ -58,7 +58,7 @@ func (v *TransactionValueIntAvgT) SetValue(newval string) error {
 	return nil
 }
 
-func (v TransactionValueIntAvgT) GetValue() uint64 {
+func (v TransactionValueIntAvgT) GetValue() int64 {
 	if v.InsertionsCount == 0 {
 		return 0
 	}
@@ -71,11 +71,11 @@ func (v *TransactionValueIntAvgT) Cleanup() {
 	v.InsertionsCount = 0
 }
 
-func (v TransactionValueIntAvgT) GetUInt64() uint64 {
+func (v TransactionValueIntAvgT) GetInt64() int64 {
 	return v.GetValue()
 }
 
-func (v *TransactionValueIntAvgT) SetUInt64(value uint64) {
+func (v *TransactionValueIntAvgT) SetInt64(value int64) {
 	v.Value = value
 	v.InsertionsCount = 1
 }
