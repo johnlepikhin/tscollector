@@ -1,6 +1,14 @@
 #!/usr/bin/perl
 
+my $dirname;
+BEGIN {
+    use File::Basename;
+    $dirname = dirname(__FILE__);
+}
+
+use lib $dirname;
 use TSCollector;
+use TSConfig;
 use warnings;
 use strict;
 
@@ -9,8 +17,6 @@ open my $fh, "/proc/interrupts" || die "cannot open /proc/interrupts: $?";
 $_ = <$fh>;
 chomp;
 my @cpus = grep { /^CPU/ } split /\s+/, $_;
-
-print "== @cpus\n";
 
 my $t = TSCollector::newTransaction();
 while (<$fh>) {
@@ -29,7 +35,7 @@ while (<$fh>) {
 }
 close $fh;
 
-my $err = TSCollector::post('http://localhost:8080/add', 'test', 'test', $t);
+my $err = TSCollector::post($TSConfig::url, $TSConfig::username, $TSConfig::password, $t);
 
 if (defined $err) {
     print "Some error occured: $err\n"

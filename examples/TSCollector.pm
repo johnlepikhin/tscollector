@@ -4,7 +4,8 @@ package TSCollector;
 
 require Exporter;
 
-use LWP::UserAgent;
+#use LWP::UserAgent;
+use IPC::Open2;
 use HTTP::Request::Common;
 use JSON;
 
@@ -22,31 +23,33 @@ use strict;
 sub post($$$$) {
     my ($url, $username, $password, $data) = @_;
 
-    my $ua = LWP::UserAgent->new;
-
     my $json = encode_json($data);
-    
-    my $request = POST($url);
-    $request->authorization_basic($username, $password);
-    $request->content_type("application/json");
-    $request->content($json);
 
-    my $response = $ua->request($request);
-
-    if ($response->is_success) {
-        my $resp = decode_json $response->content;
-        if (!defined $resp) {
-            return "Cannot decode response JSON"
-        }
-
-        if ($resp->{Status} > 0) {
-            return $resp->{Message}
-        }
-        
-        return undef
+    my $output;
+    my $pid = open2(\*output, undef, 'wget', '-q', '-O', '-', "--user=$username", "--password=$password", "--post-data=$json", $url);
+    my $response;
+    {
+        local $/ = "";
+        $response = <output>;
     }
 
-    return $response->status
+    waitpid( $pid, 0 );
+    my $rc = $? >> 8;
+
+    if ($rc) {
+        return "wget returned $rc"
+    }
+
+    my $resp = decode_json $response;
+    if (!defined $resp) {
+        return "Cannot decode response JSON"
+    }
+
+    if ($resp->{Status} > 0) {
+        return $resp->{Message}
+    }
+    
+    return undef;
 }
 
 # 0: transaction
