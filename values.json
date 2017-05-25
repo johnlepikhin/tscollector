@@ -933,5 +933,20 @@
     "ID": 186,
     "Type": "IntLast",
     "Key": "interrupts/46__PCI-MSI-edge_xhci_hcd/CPU1"
+  },
+  {
+    "ID": 187,
+    "Type": "FloatLast",
+    "Key": "loadavg5"
+  },
+  {
+    "ID": 188,
+    "Type": "FloatLast",
+    "Key": "loadavg1"
+  },
+  {
+    "ID": 189,
+    "Type": "FloatLast",
+    "Key": "loadavg15"
   }
 ]
