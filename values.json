@@ -2,241 +2,936 @@
   {
     "ID": 0,
     "Type": "IntLast",
-    "Key": "k1"
+    "Key": "meminfo/CommitLimit"
   },
   {
     "ID": 1,
     "Type": "IntLast",
-    "Key": "newnewnew"
+    "Key": "meminfo/MemTotal"
   },
   {
     "ID": 2,
-    "Type": "IntAvg",
-    "Key": "k3"
+    "Type": "IntLast",
+    "Key": "meminfo/Inactive"
   },
   {
     "ID": 3,
-    "Type": "FloatLast",
-    "Key": "floatval"
+    "Type": "IntLast",
+    "Key": "meminfo/HugePages_Total"
   },
   {
     "ID": 4,
     "Type": "IntLast",
-    "Key": "asd"
+    "Key": "meminfo/SReclaimable"
   },
   {
     "ID": 5,
     "Type": "IntLast",
-    "Key": "Slab"
+    "Key": "meminfo/SwapTotal"
   },
   {
     "ID": 6,
     "Type": "IntLast",
-    "Key": "Bounce"
+    "Key": "meminfo/Shmem"
   },
   {
     "ID": 7,
     "Type": "IntLast",
-    "Key": "SReclaimable"
+    "Key": "meminfo/HardwareCorrupted"
   },
   {
     "ID": 8,
     "Type": "IntLast",
-    "Key": "MemFree"
+    "Key": "meminfo/SwapCached"
   },
   {
     "ID": 9,
     "Type": "IntLast",
-    "Key": "DirectMap2M"
+    "Key": "meminfo/WritebackTmp"
   },
   {
     "ID": 10,
     "Type": "IntLast",
-    "Key": "VmallocChunk"
+    "Key": "meminfo/AnonHugePages"
   },
   {
     "ID": 11,
     "Type": "IntLast",
-    "Key": "VmallocTotal"
+    "Key": "meminfo/NFS_Unstable"
   },
   {
     "ID": 12,
     "Type": "IntLast",
-    "Key": "SwapTotal"
+    "Key": "meminfo/AnonPages"
   },
   {
     "ID": 13,
     "Type": "IntLast",
-    "Key": "AnonPages"
+    "Key": "meminfo/HugePages_Free"
   },
   {
     "ID": 14,
     "Type": "IntLast",
-    "Key": "SwapFree"
+    "Key": "meminfo/Mapped"
   },
   {
     "ID": 15,
     "Type": "IntLast",
-    "Key": "PageTables"
+    "Key": "meminfo/PageTables"
   },
   {
     "ID": 16,
     "Type": "IntLast",
-    "Key": "NFS_Unstable"
+    "Key": "meminfo/Cached"
   },
   {
     "ID": 17,
     "Type": "IntLast",
-    "Key": "HugePages_Total"
+    "Key": "meminfo/SUnreclaim"
   },
   {
     "ID": 18,
     "Type": "IntLast",
-    "Key": "HugePages_Free"
+    "Key": "meminfo/KernelStack"
   },
   {
     "ID": 19,
     "Type": "IntLast",
-    "Key": "MemAvailable"
+    "Key": "meminfo/Active(anon)"
   },
   {
     "ID": 20,
     "Type": "IntLast",
-    "Key": "Unevictable"
+    "Key": "meminfo/Inactive(anon)"
   },
   {
     "ID": 21,
     "Type": "IntLast",
-    "Key": "Active(anon)"
+    "Key": "meminfo/VmallocUsed"
   },
   {
     "ID": 22,
     "Type": "IntLast",
-    "Key": "Committed_AS"
+    "Key": "meminfo/Slab"
   },
   {
     "ID": 23,
     "Type": "IntLast",
-    "Key": "Writeback"
+    "Key": "meminfo/Committed_AS"
   },
   {
     "ID": 24,
     "Type": "IntLast",
-    "Key": "Dirty"
+    "Key": "meminfo/MemFree"
   },
   {
     "ID": 25,
     "Type": "IntLast",
-    "Key": "Active(file)"
+    "Key": "meminfo/Unevictable"
   },
   {
     "ID": 26,
     "Type": "IntLast",
-    "Key": "Mapped"
+    "Key": "meminfo/DirectMap2M"
   },
   {
     "ID": 27,
     "Type": "IntLast",
-    "Key": "WritebackTmp"
+    "Key": "meminfo/Bounce"
   },
   {
     "ID": 28,
     "Type": "IntLast",
-    "Key": "KernelStack"
+    "Key": "meminfo/DirectMap4k"
   },
   {
     "ID": 29,
     "Type": "IntLast",
-    "Key": "Active"
+    "Key": "meminfo/Hugepagesize"
   },
   {
     "ID": 30,
     "Type": "IntLast",
-    "Key": "Hugepagesize"
+    "Key": "meminfo/Inactive(file)"
   },
   {
     "ID": 31,
     "Type": "IntLast",
-    "Key": "SwapCached"
+    "Key": "meminfo/HugePages_Rsvd"
   },
   {
     "ID": 32,
     "Type": "IntLast",
-    "Key": "Inactive(file)"
+    "Key": "meminfo/Active"
   },
   {
     "ID": 33,
     "Type": "IntLast",
-    "Key": "DirectMap4k"
+    "Key": "meminfo/Writeback"
   },
   {
     "ID": 34,
     "Type": "IntLast",
-    "Key": "AnonHugePages"
+    "Key": "meminfo/Mlocked"
   },
   {
     "ID": 35,
     "Type": "IntLast",
-    "Key": "HugePages_Rsvd"
+    "Key": "meminfo/Active(file)"
   },
   {
     "ID": 36,
     "Type": "IntLast",
-    "Key": "MemTotal"
+    "Key": "meminfo/MemAvailable"
   },
   {
     "ID": 37,
     "Type": "IntLast",
-    "Key": "Cached"
+    "Key": "meminfo/Buffers"
   },
   {
     "ID": 38,
     "Type": "IntLast",
-    "Key": "VmallocUsed"
+    "Key": "meminfo/SwapFree"
   },
   {
     "ID": 39,
     "Type": "IntLast",
-    "Key": "Buffers"
+    "Key": "meminfo/VmallocTotal"
   },
   {
     "ID": 40,
     "Type": "IntLast",
-    "Key": "Inactive(anon)"
+    "Key": "meminfo/HugePages_Surp"
   },
   {
     "ID": 41,
     "Type": "IntLast",
-    "Key": "HardwareCorrupted"
+    "Key": "meminfo/Dirty"
   },
   {
     "ID": 42,
     "Type": "IntLast",
-    "Key": "Shmem"
+    "Key": "meminfo/VmallocChunk"
   },
   {
     "ID": 43,
     "Type": "IntLast",
-    "Key": "HugePages_Surp"
+    "Key": "interrupts/41__PCI-MSI-edge_rtsx_pci/CPU0"
   },
   {
     "ID": 44,
     "Type": "IntLast",
-    "Key": "Mlocked"
+    "Key": "interrupts/52__PCI-MSI-edge_iwlwifi/CPU0"
   },
   {
     "ID": 45,
     "Type": "IntLast",
-    "Key": "Inactive"
+    "Key": "interrupts/RES__Rescheduling_interrupts/CPU3"
   },
   {
     "ID": 46,
     "Type": "IntLast",
-    "Key": "CommitLimit"
+    "Key": "interrupts/41__PCI-MSI-edge_rtsx_pci/CPU2"
   },
   {
     "ID": 47,
     "Type": "IntLast",
-    "Key": "SUnreclaim"
+    "Key": "interrupts/RTR__APIC_ICR_read_retries/CPU2"
+  },
+  {
+    "ID": 48,
+    "Type": "IntLast",
+    "Key": "interrupts/RES__Rescheduling_interrupts/CPU1"
+  },
+  {
+    "ID": 49,
+    "Type": "IntLast",
+    "Key": "interrupts/12__IO-APIC-edge_i8042/CPU1"
+  },
+  {
+    "ID": 50,
+    "Type": "IntLast",
+    "Key": "interrupts/42__PCI-MSI-edge_eth0/CPU2"
+  },
+  {
+    "ID": 51,
+    "Type": "IntLast",
+    "Key": "interrupts/44__PCI-MSI-edge_xhci_hcd/CPU2"
+  },
+  {
+    "ID": 52,
+    "Type": "IntLast",
+    "Key": "interrupts/0__IO-APIC-edge_timer/CPU3"
+  },
+  {
+    "ID": 53,
+    "Type": "IntLast",
+    "Key": "interrupts/1__IO-APIC-edge_i8042/CPU3"
+  },
+  {
+    "ID": 54,
+    "Type": "IntLast",
+    "Key": "interrupts/PMI__Performance_monitoring_interrupts/CPU3"
+  },
+  {
+    "ID": 55,
+    "Type": "IntLast",
+    "Key": "interrupts/8__IO-APIC-edge_rtc0/CPU2"
+  },
+  {
+    "ID": 56,
+    "Type": "IntLast",
+    "Key": "interrupts/HYP__Hypervisor_callback_interrupts/CPU0"
+  },
+  {
+    "ID": 57,
+    "Type": "IntLast",
+    "Key": "interrupts/43__PCI-MSI-edge_xhci_hcd/CPU2"
+  },
+  {
+    "ID": 58,
+    "Type": "IntLast",
+    "Key": "interrupts/12__IO-APIC-edge_i8042/CPU0"
+  },
+  {
+    "ID": 59,
+    "Type": "IntLast",
+    "Key": "interrupts/LOC__Local_timer_interrupts/CPU0"
+  },
+  {
+    "ID": 60,
+    "Type": "IntLast",
+    "Key": "interrupts/MCP__Machine_check_polls/CPU1"
+  },
+  {
+    "ID": 61,
+    "Type": "IntLast",
+    "Key": "interrupts/50__PCI-MSI-edge_snd_hda_intel/CPU0"
+  },
+  {
+    "ID": 62,
+    "Type": "IntLast",
+    "Key": "interrupts/45__PCI-MSI-edge_xhci_hcd/CPU2"
+  },
+  {
+    "ID": 63,
+    "Type": "IntLast",
+    "Key": "interrupts/MCP__Machine_check_polls/CPU2"
+  },
+  {
+    "ID": 64,
+    "Type": "IntLast",
+    "Key": "interrupts/RTR__APIC_ICR_read_retries/CPU0"
+  },
+  {
+    "ID": 65,
+    "Type": "IntLast",
+    "Key": "interrupts/42__PCI-MSI-edge_eth0/CPU0"
+  },
+  {
+    "ID": 66,
+    "Type": "IntLast",
+    "Key": "interrupts/8__IO-APIC-edge_rtc0/CPU1"
+  },
+  {
+    "ID": 67,
+    "Type": "IntLast",
+    "Key": "interrupts/47__PCI-MSI-edge_xhci_hcd/CPU2"
+  },
+  {
+    "ID": 68,
+    "Type": "IntLast",
+    "Key": "interrupts/48__PCI-MSI-edge_ahci/CPU0"
+  },
+  {
+    "ID": 69,
+    "Type": "IntLast",
+    "Key": "interrupts/8__IO-APIC-edge_rtc0/CPU0"
+  },
+  {
+    "ID": 70,
+    "Type": "IntLast",
+    "Key": "interrupts/42__PCI-MSI-edge_eth0/CPU3"
+  },
+  {
+    "ID": 71,
+    "Type": "IntLast",
+    "Key": "interrupts/42__PCI-MSI-edge_eth0/CPU1"
+  },
+  {
+    "ID": 72,
+    "Type": "IntLast",
+    "Key": "interrupts/20__IO-APIC-fasteoi_ehci_hcd:usb4/CPU3"
+  },
+  {
+    "ID": 73,
+    "Type": "IntLast",
+    "Key": "interrupts/46__PCI-MSI-edge_xhci_hcd/CPU2"
+  },
+  {
+    "ID": 74,
+    "Type": "IntLast",
+    "Key": "interrupts/ERR__/CPU3"
+  },
+  {
+    "ID": 75,
+    "Type": "IntLast",
+    "Key": "interrupts/49__PCI-MSI-edge_mei_me/CPU3"
+  },
+  {
+    "ID": 76,
+    "Type": "IntLast",
+    "Key": "interrupts/MCP__Machine_check_polls/CPU3"
+  },
+  {
+    "ID": 77,
+    "Type": "IntLast",
+    "Key": "interrupts/47__PCI-MSI-edge_xhci_hcd/CPU0"
+  },
+  {
+    "ID": 78,
+    "Type": "IntLast",
+    "Key": "interrupts/46__PCI-MSI-edge_xhci_hcd/CPU3"
+  },
+  {
+    "ID": 79,
+    "Type": "IntLast",
+    "Key": "interrupts/PMI__Performance_monitoring_interrupts/CPU0"
+  },
+  {
+    "ID": 80,
+    "Type": "IntLast",
+    "Key": "interrupts/45__PCI-MSI-edge_xhci_hcd/CPU0"
+  },
+  {
+    "ID": 81,
+    "Type": "IntLast",
+    "Key": "interrupts/MIS__/CPU0"
+  },
+  {
+    "ID": 82,
+    "Type": "IntLast",
+    "Key": "interrupts/NMI__Non-maskable_interrupts/CPU0"
+  },
+  {
+    "ID": 83,
+    "Type": "IntLast",
+    "Key": "interrupts/ERR__/CPU0"
+  },
+  {
+    "ID": 84,
+    "Type": "IntLast",
+    "Key": "interrupts/46__PCI-MSI-edge_xhci_hcd/CPU0"
+  },
+  {
+    "ID": 85,
+    "Type": "IntLast",
+    "Key": "interrupts/20__IO-APIC-fasteoi_ehci_hcd:usb4/CPU0"
+  },
+  {
+    "ID": 86,
+    "Type": "IntLast",
+    "Key": "interrupts/44__PCI-MSI-edge_xhci_hcd/CPU1"
+  },
+  {
+    "ID": 87,
+    "Type": "IntLast",
+    "Key": "interrupts/52__PCI-MSI-edge_iwlwifi/CPU3"
+  },
+  {
+    "ID": 88,
+    "Type": "IntLast",
+    "Key": "interrupts/47__PCI-MSI-edge_xhci_hcd/CPU3"
+  },
+  {
+    "ID": 89,
+    "Type": "IntLast",
+    "Key": "interrupts/20__IO-APIC-fasteoi_ehci_hcd:usb4/CPU1"
+  },
+  {
+    "ID": 90,
+    "Type": "IntLast",
+    "Key": "interrupts/43__PCI-MSI-edge_xhci_hcd/CPU1"
+  },
+  {
+    "ID": 91,
+    "Type": "IntLast",
+    "Key": "interrupts/50__PCI-MSI-edge_snd_hda_intel/CPU1"
+  },
+  {
+    "ID": 92,
+    "Type": "IntLast",
+    "Key": "interrupts/45__PCI-MSI-edge_xhci_hcd/CPU3"
+  },
+  {
+    "ID": 93,
+    "Type": "IntLast",
+    "Key": "interrupts/50__PCI-MSI-edge_snd_hda_intel/CPU3"
+  },
+  {
+    "ID": 94,
+    "Type": "IntLast",
+    "Key": "interrupts/49__PCI-MSI-edge_mei_me/CPU1"
+  },
+  {
+    "ID": 95,
+    "Type": "IntLast",
+    "Key": "interrupts/8__IO-APIC-edge_rtc0/CPU3"
+  },
+  {
+    "ID": 96,
+    "Type": "IntLast",
+    "Key": "interrupts/1__IO-APIC-edge_i8042/CPU1"
+  },
+  {
+    "ID": 97,
+    "Type": "IntLast",
+    "Key": "interrupts/HYP__Hypervisor_callback_interrupts/CPU2"
+  },
+  {
+    "ID": 98,
+    "Type": "IntLast",
+    "Key": "interrupts/41__PCI-MSI-edge_rtsx_pci/CPU3"
+  },
+  {
+    "ID": 99,
+    "Type": "IntLast",
+    "Key": "interrupts/48__PCI-MSI-edge_ahci/CPU3"
+  },
+  {
+    "ID": 100,
+    "Type": "IntLast",
+    "Key": "interrupts/9__IO-APIC-fasteoi_acpi/CPU0"
+  },
+  {
+    "ID": 101,
+    "Type": "IntLast",
+    "Key": "interrupts/MIS__/CPU2"
+  },
+  {
+    "ID": 102,
+    "Type": "IntLast",
+    "Key": "interrupts/CAL__Function_call_interrupts/CPU2"
+  },
+  {
+    "ID": 103,
+    "Type": "IntLast",
+    "Key": "interrupts/TRM__Thermal_event_interrupts/CPU3"
+  },
+  {
+    "ID": 104,
+    "Type": "IntLast",
+    "Key": "interrupts/RES__Rescheduling_interrupts/CPU0"
+  },
+  {
+    "ID": 105,
+    "Type": "IntLast",
+    "Key": "interrupts/50__PCI-MSI-edge_snd_hda_intel/CPU2"
+  },
+  {
+    "ID": 106,
+    "Type": "IntLast",
+    "Key": "interrupts/41__PCI-MSI-edge_rtsx_pci/CPU1"
+  },
+  {
+    "ID": 107,
+    "Type": "IntLast",
+    "Key": "interrupts/23__IO-APIC-fasteoi_ehci_hcd:usb1/CPU3"
+  },
+  {
+    "ID": 108,
+    "Type": "IntLast",
+    "Key": "interrupts/THR__Threshold_APIC_interrupts/CPU0"
+  },
+  {
+    "ID": 109,
+    "Type": "IntLast",
+    "Key": "interrupts/RTR__APIC_ICR_read_retries/CPU1"
+  },
+  {
+    "ID": 110,
+    "Type": "IntLast",
+    "Key": "interrupts/53__PCI-MSI-edge_radeon/CPU1"
+  },
+  {
+    "ID": 111,
+    "Type": "IntLast",
+    "Key": "interrupts/THR__Threshold_APIC_interrupts/CPU2"
+  },
+  {
+    "ID": 112,
+    "Type": "IntLast",
+    "Key": "interrupts/53__PCI-MSI-edge_radeon/CPU2"
+  },
+  {
+    "ID": 113,
+    "Type": "IntLast",
+    "Key": "interrupts/12__IO-APIC-edge_i8042/CPU3"
+  },
+  {
+    "ID": 114,
+    "Type": "IntLast",
+    "Key": "interrupts/TLB__TLB_shootdowns/CPU1"
+  },
+  {
+    "ID": 115,
+    "Type": "IntLast",
+    "Key": "interrupts/52__PCI-MSI-edge_iwlwifi/CPU2"
+  },
+  {
+    "ID": 116,
+    "Type": "IntLast",
+    "Key": "interrupts/CAL__Function_call_interrupts/CPU1"
+  },
+  {
+    "ID": 117,
+    "Type": "IntLast",
+    "Key": "interrupts/0__IO-APIC-edge_timer/CPU0"
+  },
+  {
+    "ID": 118,
+    "Type": "IntLast",
+    "Key": "interrupts/MCE__Machine_check_exceptions/CPU1"
+  },
+  {
+    "ID": 119,
+    "Type": "IntLast",
+    "Key": "interrupts/9__IO-APIC-fasteoi_acpi/CPU1"
+  },
+  {
+    "ID": 120,
+    "Type": "IntLast",
+    "Key": "interrupts/0__IO-APIC-edge_timer/CPU2"
+  },
+  {
+    "ID": 121,
+    "Type": "IntLast",
+    "Key": "interrupts/MIS__/CPU3"
+  },
+  {
+    "ID": 122,
+    "Type": "IntLast",
+    "Key": "interrupts/CAL__Function_call_interrupts/CPU0"
+  },
+  {
+    "ID": 123,
+    "Type": "IntLast",
+    "Key": "interrupts/IWI__IRQ_work_interrupts/CPU1"
+  },
+  {
+    "ID": 124,
+    "Type": "IntLast",
+    "Key": "interrupts/12__IO-APIC-edge_i8042/CPU2"
+  },
+  {
+    "ID": 125,
+    "Type": "IntLast",
+    "Key": "interrupts/0__IO-APIC-edge_timer/CPU1"
+  },
+  {
+    "ID": 126,
+    "Type": "IntLast",
+    "Key": "interrupts/NMI__Non-maskable_interrupts/CPU3"
+  },
+  {
+    "ID": 127,
+    "Type": "IntLast",
+    "Key": "interrupts/NMI__Non-maskable_interrupts/CPU1"
+  },
+  {
+    "ID": 128,
+    "Type": "IntLast",
+    "Key": "interrupts/TLB__TLB_shootdowns/CPU2"
+  },
+  {
+    "ID": 129,
+    "Type": "IntLast",
+    "Key": "interrupts/MIS__/CPU1"
+  },
+  {
+    "ID": 130,
+    "Type": "IntLast",
+    "Key": "interrupts/ERR__/CPU1"
+  },
+  {
+    "ID": 131,
+    "Type": "IntLast",
+    "Key": "interrupts/TLB__TLB_shootdowns/CPU3"
+  },
+  {
+    "ID": 132,
+    "Type": "IntLast",
+    "Key": "interrupts/IWI__IRQ_work_interrupts/CPU2"
+  },
+  {
+    "ID": 133,
+    "Type": "IntLast",
+    "Key": "interrupts/TRM__Thermal_event_interrupts/CPU2"
+  },
+  {
+    "ID": 134,
+    "Type": "IntLast",
+    "Key": "interrupts/52__PCI-MSI-edge_iwlwifi/CPU1"
+  },
+  {
+    "ID": 135,
+    "Type": "IntLast",
+    "Key": "interrupts/IWI__IRQ_work_interrupts/CPU3"
+  },
+  {
+    "ID": 136,
+    "Type": "IntLast",
+    "Key": "interrupts/1__IO-APIC-edge_i8042/CPU0"
+  },
+  {
+    "ID": 137,
+    "Type": "IntLast",
+    "Key": "interrupts/CAL__Function_call_interrupts/CPU3"
+  },
+  {
+    "ID": 138,
+    "Type": "IntLast",
+    "Key": "interrupts/48__PCI-MSI-edge_ahci/CPU1"
+  },
+  {
+    "ID": 139,
+    "Type": "IntLast",
+    "Key": "interrupts/MCE__Machine_check_exceptions/CPU3"
+  },
+  {
+    "ID": 140,
+    "Type": "IntLast",
+    "Key": "interrupts/20__IO-APIC-fasteoi_ehci_hcd:usb4/CPU2"
+  },
+  {
+    "ID": 141,
+    "Type": "IntLast",
+    "Key": "interrupts/SPU__Spurious_interrupts/CPU0"
+  },
+  {
+    "ID": 142,
+    "Type": "IntLast",
+    "Key": "interrupts/RTR__APIC_ICR_read_retries/CPU3"
+  },
+  {
+    "ID": 143,
+    "Type": "IntLast",
+    "Key": "interrupts/23__IO-APIC-fasteoi_ehci_hcd:usb1/CPU0"
+  },
+  {
+    "ID": 144,
+    "Type": "IntLast",
+    "Key": "interrupts/RES__Rescheduling_interrupts/CPU2"
+  },
+  {
+    "ID": 145,
+    "Type": "IntLast",
+    "Key": "interrupts/51__PCI-MSI-edge_i915/CPU1"
+  },
+  {
+    "ID": 146,
+    "Type": "IntLast",
+    "Key": "interrupts/MCE__Machine_check_exceptions/CPU2"
+  },
+  {
+    "ID": 147,
+    "Type": "IntLast",
+    "Key": "interrupts/49__PCI-MSI-edge_mei_me/CPU0"
+  },
+  {
+    "ID": 148,
+    "Type": "IntLast",
+    "Key": "interrupts/1__IO-APIC-edge_i8042/CPU2"
+  },
+  {
+    "ID": 149,
+    "Type": "IntLast",
+    "Key": "interrupts/HYP__Hypervisor_callback_interrupts/CPU3"
+  },
+  {
+    "ID": 150,
+    "Type": "IntLast",
+    "Key": "interrupts/PMI__Performance_monitoring_interrupts/CPU1"
+  },
+  {
+    "ID": 151,
+    "Type": "IntLast",
+    "Key": "interrupts/23__IO-APIC-fasteoi_ehci_hcd:usb1/CPU2"
+  },
+  {
+    "ID": 152,
+    "Type": "IntLast",
+    "Key": "interrupts/HYP__Hypervisor_callback_interrupts/CPU1"
+  },
+  {
+    "ID": 153,
+    "Type": "IntLast",
+    "Key": "interrupts/THR__Threshold_APIC_interrupts/CPU1"
+  },
+  {
+    "ID": 154,
+    "Type": "IntLast",
+    "Key": "interrupts/ERR__/CPU2"
+  },
+  {
+    "ID": 155,
+    "Type": "IntLast",
+    "Key": "interrupts/49__PCI-MSI-edge_mei_me/CPU2"
+  },
+  {
+    "ID": 156,
+    "Type": "IntLast",
+    "Key": "interrupts/MCP__Machine_check_polls/CPU0"
+  },
+  {
+    "ID": 157,
+    "Type": "IntLast",
+    "Key": "interrupts/TRM__Thermal_event_interrupts/CPU1"
+  },
+  {
+    "ID": 158,
+    "Type": "IntLast",
+    "Key": "interrupts/LOC__Local_timer_interrupts/CPU1"
+  },
+  {
+    "ID": 159,
+    "Type": "IntLast",
+    "Key": "interrupts/51__PCI-MSI-edge_i915/CPU0"
+  },
+  {
+    "ID": 160,
+    "Type": "IntLast",
+    "Key": "interrupts/48__PCI-MSI-edge_ahci/CPU2"
+  },
+  {
+    "ID": 161,
+    "Type": "IntLast",
+    "Key": "interrupts/TRM__Thermal_event_interrupts/CPU0"
+  },
+  {
+    "ID": 162,
+    "Type": "IntLast",
+    "Key": "interrupts/9__IO-APIC-fasteoi_acpi/CPU3"
+  },
+  {
+    "ID": 163,
+    "Type": "IntLast",
+    "Key": "interrupts/23__IO-APIC-fasteoi_ehci_hcd:usb1/CPU1"
+  },
+  {
+    "ID": 164,
+    "Type": "IntLast",
+    "Key": "interrupts/MCE__Machine_check_exceptions/CPU0"
+  },
+  {
+    "ID": 165,
+    "Type": "IntLast",
+    "Key": "interrupts/NMI__Non-maskable_interrupts/CPU2"
+  },
+  {
+    "ID": 166,
+    "Type": "IntLast",
+    "Key": "interrupts/45__PCI-MSI-edge_xhci_hcd/CPU1"
+  },
+  {
+    "ID": 167,
+    "Type": "IntLast",
+    "Key": "interrupts/THR__Threshold_APIC_interrupts/CPU3"
+  },
+  {
+    "ID": 168,
+    "Type": "IntLast",
+    "Key": "interrupts/51__PCI-MSI-edge_i915/CPU2"
+  },
+  {
+    "ID": 169,
+    "Type": "IntLast",
+    "Key": "interrupts/43__PCI-MSI-edge_xhci_hcd/CPU3"
+  },
+  {
+    "ID": 170,
+    "Type": "IntLast",
+    "Key": "interrupts/IWI__IRQ_work_interrupts/CPU0"
+  },
+  {
+    "ID": 171,
+    "Type": "IntLast",
+    "Key": "interrupts/TLB__TLB_shootdowns/CPU0"
+  },
+  {
+    "ID": 172,
+    "Type": "IntLast",
+    "Key": "interrupts/9__IO-APIC-fasteoi_acpi/CPU2"
+  },
+  {
+    "ID": 173,
+    "Type": "IntLast",
+    "Key": "interrupts/47__PCI-MSI-edge_xhci_hcd/CPU1"
+  },
+  {
+    "ID": 174,
+    "Type": "IntLast",
+    "Key": "interrupts/53__PCI-MSI-edge_radeon/CPU0"
+  },
+  {
+    "ID": 175,
+    "Type": "IntLast",
+    "Key": "interrupts/44__PCI-MSI-edge_xhci_hcd/CPU3"
+  },
+  {
+    "ID": 176,
+    "Type": "IntLast",
+    "Key": "interrupts/PMI__Performance_monitoring_interrupts/CPU2"
+  },
+  {
+    "ID": 177,
+    "Type": "IntLast",
+    "Key": "interrupts/SPU__Spurious_interrupts/CPU2"
+  },
+  {
+    "ID": 178,
+    "Type": "IntLast",
+    "Key": "interrupts/SPU__Spurious_interrupts/CPU3"
+  },
+  {
+    "ID": 179,
+    "Type": "IntLast",
+    "Key": "interrupts/53__PCI-MSI-edge_radeon/CPU3"
+  },
+  {
+    "ID": 180,
+    "Type": "IntLast",
+    "Key": "interrupts/LOC__Local_timer_interrupts/CPU3"
+  },
+  {
+    "ID": 181,
+    "Type": "IntLast",
+    "Key": "interrupts/43__PCI-MSI-edge_xhci_hcd/CPU0"
+  },
+  {
+    "ID": 182,
+    "Type": "IntLast",
+    "Key": "interrupts/SPU__Spurious_interrupts/CPU1"
+  },
+  {
+    "ID": 183,
+    "Type": "IntLast",
+    "Key": "interrupts/44__PCI-MSI-edge_xhci_hcd/CPU0"
+  },
+  {
+    "ID": 184,
+    "Type": "IntLast",
+    "Key": "interrupts/LOC__Local_timer_interrupts/CPU2"
+  },
+  {
+    "ID": 185,
+    "Type": "IntLast",
+    "Key": "interrupts/51__PCI-MSI-edge_i915/CPU3"
+  },
+  {
+    "ID": 186,
+    "Type": "IntLast",
+    "Key": "interrupts/46__PCI-MSI-edge_xhci_hcd/CPU1"
   }
 ]
