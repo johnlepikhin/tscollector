@@ -4,6 +4,7 @@ import (
 	"tscollector/config"
 	"time"
 	"errors"
+	"fmt"
 )
 
 type InputValue struct {
@@ -111,6 +112,7 @@ func (transaction TransactionT) PutValue(key config.MeasureKey, value Transactio
 
 func (transaction1 *TransactionT) MergeValues(transaction2 Transaction) {
 	for _, v := range transaction2.GetValues() {
+		fmt.Printf("Merge: %v=%v\n", v.GetConfigValue().Key, v.Printable())
 		transaction1.Values[v.GetConfigValue().Key] = v
 	}
 }

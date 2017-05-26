@@ -57,7 +57,7 @@ sub post($$$$) {
 # 2: value
 # 3: value type
 sub addValue($$$;$) {
-    $_[0]->{$_[1]}{Value} = $_[2];
+    $_[0]->{$_[1]}{Value} = $_[2] . '';
     $_[0]->{$_[1]}{Type} = $_[3] if defined $_[3];
 }
 

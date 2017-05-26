@@ -9,6 +9,7 @@ import (
 	"math"
 	"strconv"
 	"os"
+	"sort"
 )
 
 func (storage StorageDirTreeT) ReadUInt64(stream *bufio.Reader) (uint64, error) {
@@ -105,7 +106,15 @@ func (storage StorageDirTreeT) LoadGroup(stream *bufio.Reader, fileTimeOffset ti
 		return record, err
 	}
 
-	for bit, configValuesPosition := range bitmap {
+	var bits []int
+	for k := range bitmap {
+		bits = append(bits, int(k))
+	}
+	sort.Ints(bits)
+
+	for _, b := range bits {
+		bit := bit(b)
+		configValuesPosition := bitmap[bit]
 		configValue := config.Values[configValuesPosition]
 
 		if (1 << uint(bit)) & mask == 0 {
@@ -163,7 +172,6 @@ func makeBitMask(groupID uint64) bitmask {
 		}
 
 		var idInGroup = bit(id - minID)
-
 		ret[idInGroup] = configValuesPosition(id)
 	}
 
