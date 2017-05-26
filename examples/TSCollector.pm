@@ -4,9 +4,7 @@ package TSCollector;
 
 require Exporter;
 
-#use LWP::UserAgent;
 use IPC::Open2;
-use HTTP::Request::Common;
 use JSON;
 
 our @ISA     = qw(Exporter);
