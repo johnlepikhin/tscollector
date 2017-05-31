@@ -35,7 +35,6 @@ func HttpAddHandler (auth config.Auth, sharedTransaction transaction.Transaction
 		httpjson.HttpJsonError(w, 1, "Invalid input JSON")
 		return
 	}
-	defer r.Body.Close()
 	err = sharedTransaction.AddPlainValues(auth, values)
 	if err != nil {
 		httpjson.HttpJsonError(w, 1, err.Error())
@@ -109,14 +108,14 @@ func HttpGetHandler (auth config.Auth, w http.ResponseWriter, r *http.Request) {
 		end = time.Unix(0,  end_int*time.Millisecond.Nanoseconds())
 	}
 
-	if end.UnixNano() <= start.UnixNano() {
+	if !end.After(start) {
 		httpjson.HttpJsonError(w, 1, "URI parameter 'end' must be greater than 'start'")
 		return
 	}
 
-	if end.Sub(start) > config.Config.MaxGetInterval {
+	if end.Sub(start) > config.Config.MaxGetIntervalMs {
 		httpjson.HttpJsonError(w, 1, "Time interval between values of URI parameters 'start' and 'end' is too big. Max interval is " +
-			strconv.FormatUint(uint64(config.Config.MaxGetInterval.Seconds()), 10) + " seconds")
+			strconv.FormatUint(uint64(config.Config.MaxGetIntervalMs.Seconds()), 10) + " seconds")
 		return
 	}
 
@@ -149,11 +148,6 @@ func MakeAuthorizedHttpHandler(auth []config.Auth, handler func(config.Auth, htt
 	return func(w http.ResponseWriter, r *http.Request) {
 		received_username, received_password, _ := r.BasicAuth();
 
-		unauthorized := func() {
-			w.Header().Set("WWW-Authenticate", `Basic realm="tscollector"`)
-			http.Error(w, "Unauthorized", http.StatusUnauthorized)
-		}
-
 		for _, auth := range auth {
 			if auth.Username == received_username {
 				if auth.Password == received_password {
@@ -165,7 +159,8 @@ func MakeAuthorizedHttpHandler(auth []config.Auth, handler func(config.Auth, htt
 			}
 		}
 
-		unauthorized()
+		w.Header().Set("WWW-Authenticate", `Basic realm="tscollector"`)
+		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 	}
 }
 

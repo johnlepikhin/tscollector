@@ -36,19 +36,19 @@ type MeasureT struct {
 }
 
 type Configuration struct {
-	Listen []Listen
-	Storage string
-	TickSize time.Duration
-	SavePeriod time.Duration
-	MaxGetInterval time.Duration
+	Listen           []Listen
+	Storage          string
+	TickSizeMs       time.Duration
+	SavePeriodMs     time.Duration
+	MaxGetIntervalMs time.Duration
 }
 
 var ConfigFile string
 
 var Config Configuration = Configuration{
-	TickSize: time.Second,
-	SavePeriod: time.Second*60,
-	MaxGetInterval: time.Hour*24,
+	TickSizeMs: time.Second,
+	SavePeriodMs: time.Minute/time.Millisecond,
+	MaxGetIntervalMs: time.Hour*24/time.Millisecond,
 }
 
 var ValuesFile string
@@ -92,23 +92,25 @@ func ConfigParser() error {
 		return errors.New("No storage defined in configuration file")
 	}
 
-	if (Config.TickSize == 0) {
-		return errors.New("TickSize cannot be zero in configuration file")
+	if (Config.TickSizeMs <= 0) {
+		return errors.New("TickSize cannot be zero ot negative in configuration file")
 	}
 
-	if (Config.SavePeriod == 0) {
-		return errors.New("SavePeriod cannot be zero in configuration file")
+	if (Config.SavePeriodMs <= 0) {
+		return errors.New("SavePeriod cannot be zero or negative in configuration file")
 	}
 
-	if (Config.SavePeriod < Config.TickSize) {
+	if (Config.SavePeriodMs < Config.TickSizeMs) {
 		return errors.New("SavePeriod cannot smaller than TickSize in configuration file")
 	}
 
-	if (Config.SavePeriod % Config.TickSize > 0) {
+	if (Config.SavePeriodMs % Config.TickSizeMs > 0) {
 		return errors.New("SavePeriod must be multiple of TickSize in configuration file")
 	}
 
-	Config.TickSize *= time.Millisecond
+	Config.TickSizeMs *= time.Millisecond
+	Config.SavePeriodMs *= time.Millisecond
+	Config.MaxGetIntervalMs *= time.Millisecond
 
 	return nil
 }

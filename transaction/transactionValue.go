@@ -17,7 +17,6 @@ type TransactionValue interface {
 
 type TransactionValueT struct {
 	ConfigValue config.MeasureT
-	Value interface{}
 }
 
 func (v TransactionValueT) GetConfigValue() config.MeasureT {

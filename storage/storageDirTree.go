@@ -11,6 +11,7 @@ import (
 	"time"
 	"os"
 	"math"
+	"path/filepath"
 )
 
 const Version = 1
@@ -139,6 +140,7 @@ func (storage StorageDirTreeT) prepareGroups(transaction transaction.Transaction
 	for _, v := range transaction.GetValues() {
 		var encoded = storage.Encode(v)
 		if encoded == nil {
+			// TODO
 			continue
 		}
 
@@ -211,7 +213,7 @@ func (storage StorageDirTreeT) GenerateFileNamePrefix(levels []time.Time) string
 func (storage StorageDirTreeT) PrepareDirectories(levels []time.Time) string {
 	directories := storage.GenerateDirectories(levels)
 
-	os.MkdirAll(directories, 0755)
+	os.MkdirAll(directories, 0750)
 
 	return directories
 }
@@ -242,7 +244,7 @@ func (storage StorageDirTreeT) SaveGroup(groupId int, group Group) {
 
 	now_time := time.Now()
 	file_start_time := Floor(now_time, storage.Levels[len(storage.Levels)-1])
-	now_time_tick_offset := (now_time.UnixNano() - file_start_time.UnixNano()) / config.Config.TickSize.Nanoseconds()
+	now_time_tick_offset := (now_time.UnixNano() - file_start_time.UnixNano()) / config.Config.TickSizeMs.Nanoseconds()
 
 	now_time_tick_offset_bytes := storage.EncodeUInt64(uint64(now_time_tick_offset))
 
@@ -257,7 +259,7 @@ func (storage StorageDirTreeT) SaveGroup(groupId int, group Group) {
 	directories := storage.PrepareDirectories(levels)
 
 	fname := storage.GenerateFileNamePrefix(levels) + "_" + strconv.Itoa(groupId)
-	fname = directories + string(os.PathSeparator) + fname
+	fname = filepath.Join(directories, fname)
 
 	f, err := os.OpenFile(fname, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0640)
 

@@ -154,7 +154,7 @@ func (storage StorageDirTreeT) LoadGroup(stream *bufio.Reader, fileTimeOffset ti
 		record.PutValue(configValue.Key, transactionValue)
 	}
 
-	timestamp := fileTimeOffset.Add(time.Duration(int64(recordTickOffset))*config.Config.TickSize)
+	timestamp := fileTimeOffset.Add(time.Duration(int64(recordTickOffset))*config.Config.TickSizeMs)
 	record.SetTimeStamp(timestamp)
 
 	return record, nil

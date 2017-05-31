@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "TickSize": 1000,
-  "SavePeriod": 3000,
+  "TickSizeMs": 1000,
+  "SavePeriodMs": 3000,
   "Storage": "directoryTree:rootDirectory=/tmp/storage;levels=3600,60"
 }

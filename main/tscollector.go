@@ -13,19 +13,22 @@ import (
 	"github.com/johnlepikhin/tscollector/tshttp"
 )
 
-func saveStats(transaction transaction.Transaction) {
+func saveStats(transaction transaction.Transaction, mutex sync.Mutex) {
 	fmt.Println("Save transaction")
 	storage.Storage.SaveTransaction(transaction)
-	transaction.Cleanup()
+	transaction.Cleanup();
+	mutex.Unlock()
 }
 
 func startStatsSaver (transaction transaction.Transaction) {
-	ticker := time.NewTicker(config.Config.SavePeriod * time.Millisecond)
+	ticker := time.NewTicker(config.Config.SavePeriodMs)
+	mutex := sync.Mutex{}
 	go func() {
 		for {
 			select {
 			case <- ticker.C:
-				go saveStats(transaction)
+				mutex.Lock()
+				go saveStats(transaction, mutex)
 			}
 		}
 	}()
@@ -45,7 +48,7 @@ func cmdParser() {
 	}
 }
 
-func startListen(transaction transaction.Transaction) {
+func listen(transaction transaction.Transaction) {
 	httpAddHandlerReal := func(auth config.Auth, w http.ResponseWriter, r *http.Request) {
 		tshttp.HttpAddHandler(auth, transaction, w, r)
 	}
@@ -92,5 +95,5 @@ func main() {
 	var currentTransaction = transaction.NewTransaction()
 
 	startStatsSaver(currentTransaction)
-	startListen(currentTransaction)
+	listen(currentTransaction)
 }
