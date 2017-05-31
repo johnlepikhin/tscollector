@@ -2,9 +2,9 @@ package storage
 
 import (
 	"bufio"
-	"tscollector/transaction"
+	"github.com/johnlepikhin/tscollector/transaction"
 	"errors"
-	"tscollector/config"
+	"github.com/johnlepikhin/tscollector/config"
 	"time"
 	"math"
 	"strconv"

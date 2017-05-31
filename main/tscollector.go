@@ -7,10 +7,10 @@ import (
 	"time"
 	//"github.com/fsnotify/fsnotify"
 	"sync"
-	"tscollector/transaction"
-	"tscollector/config"
-	"tscollector/storage"
-	"tscollector/tshttp"
+	"github.com/johnlepikhin/tscollector/transaction"
+	"github.com/johnlepikhin/tscollector/config"
+	"github.com/johnlepikhin/tscollector/storage"
+	"github.com/johnlepikhin/tscollector/tshttp"
 )
 
 func saveStats(transaction transaction.Transaction) {

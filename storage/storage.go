@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"tscollector/transaction"
+	"github.com/johnlepikhin/tscollector/transaction"
 	"regexp"
 	"fmt"
 	"time"

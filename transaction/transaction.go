@@ -1,7 +1,7 @@
 package transaction
 
 import (
-	"tscollector/config"
+	"github.com/johnlepikhin/tscollector/config"
 	"time"
 	"errors"
 	"fmt"

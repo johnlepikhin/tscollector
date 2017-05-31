@@ -4,10 +4,10 @@ import
 (
 	"net/http"
 	"encoding/json"
-	"tscollector/transaction"
-	"tscollector/config"
-	"tscollector/httpjson"
-	"tscollector/storage"
+	"github.com/johnlepikhin/tscollector/transaction"
+	"github.com/johnlepikhin/tscollector/config"
+	"github.com/johnlepikhin/tscollector/httpjson"
+	"github.com/johnlepikhin/tscollector/storage"
 	"time"
 	"strconv"
 )

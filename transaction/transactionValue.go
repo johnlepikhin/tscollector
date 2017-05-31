@@ -1,6 +1,6 @@
 package transaction
 
-import "tscollector/config"
+import "github.com/johnlepikhin/tscollector/config"
 
 type TransactionValue interface {
 	SetValue(value string) error
